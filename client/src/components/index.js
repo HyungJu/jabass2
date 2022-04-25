@@ -8,8 +8,8 @@ const $header = $('header');
 const $main = $('main');
 
 const renderContents = {
-  [PATHNAMES.HOME]: renderHome,
-  [PATHNAMES.LOGIN]: renderLogin,
+  [PATHNAMES.HOME]: renderLogin,
+  [PATHNAMES.LOGIN]: renderHome,
 };
 
 export const renderContent = (pathname) => {
