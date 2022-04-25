@@ -9,6 +9,17 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-undef": "off"
-  }
+    "no-undef": "off",
+    "import/extensions": "off",
+    "no-confusing-arrow": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-use-before-define": ["error", "nofunc"]
+  },
+  "plugins": ["cypress"],
+  "ignorePatterns": [
+    "cypress/fixtures/*",
+    "cypress/plugins/*",
+    "cypress/support/*",
+    "dist"
+  ]
 }
