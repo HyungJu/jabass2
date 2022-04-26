@@ -1,0 +1,54 @@
+$title-active: var(--title-active-color);
+$primary1: var(--primary1-color);
+$primary2: var(--primary2-color);
+$primary3: var(--primary3-color);
+$background: var(--background-color);
+$line: var(--line-color);
+
+$phone-max-width: 425px;
+$shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$config: (
+  light: (
+    title-active: #1e2222,
+    primary1: #219a95,
+    primary2: #17a5a3,
+    primary3: #2ac1bc,
+    background: #f5f5f5,
+  ),
+  dark: (
+    title-active: #ffffff,
+    primary1: #f3d9fa,
+    primary2: #eebefa,
+    primary3: #e599f7,
+    background: #1e2222,
+  ),
+);
+
+@function setStyle($map, $object, $style) {
+  @if map-has-key($map, $object) {
+    @return map-get(map-get($map, $object), $style);
+  }
+  @warn "The key ´#{$object} is not available in the map.";
+  @return null;
+}
+
+@mixin theme($key) {
+  --title-active-color: #{setStyle($config, $key, title-active)};
+  --primary1-color: #{setStyle($config, $key, primary1)};
+  --primary2-color: #{setStyle($config, $key, primary2)};
+  --primary3-color: #{setStyle($config, $key, primary3)};
+  --background-color: #{setStyle($config, $key, background)};
+}
+
+@each $theme in dark, light {
+  body.#{$theme}-mode {
+    @include theme($theme);
+  }
+}

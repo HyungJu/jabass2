@@ -1,0 +1,68 @@
+@import 'reset';
+@import 'theme';
+@import 'ui/header.scss';
+@import 'ui/home.scss';
+@import 'ui/login.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+@font-face {
+  font-family: 'BMDOHYEON';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  @include theme(light);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s;
+  background-color: $background;
+  color: $title-active !important;
+
+  #app {
+    width: 100%;
+    height: 100%;
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+    position: relative;
+  }
+
+  #theme-btn {
+    @include flex-center;
+    position: fixed;
+    z-index: 100;
+    width: 5rem;
+    height: 5rem;
+    right: 2rem;
+    top: 1rem;
+    border-radius: 50%;
+    box-shadow: $shadow;
+  }
+  .theme-btn-img {
+    width: 4rem;
+    height: 4rem;
+    background-image: url('../assets/sun.svg');
+  }
+}
+
+.dark-mode {
+  .theme-btn-img {
+    width: 3rem;
+    height: 3rem;
+    background-size: contain;
+    background-image: url('../assets/moon.svg');
+  }
+}
