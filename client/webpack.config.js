@@ -26,18 +26,15 @@ const config = (_, argv) => ({
         },
       },
       {
-        test: /\.css$/,
-        use: [
-          { loader: MiniCssExtractPlugin.loader },
-          {
-            loader: 'css-loader',
-            options: { import: true },
-          },
-        ],
+        test: /\.(css|scss)$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.png$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        // generator: {
+        //   filename: 'images/[name][ext]',
+        // },
       },
     ],
   },

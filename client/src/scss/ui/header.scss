@@ -1,0 +1,43 @@
+@import '../theme.scss';
+
+header {
+  color: $title-active;
+  font-family: 'BMDOHYEON', sans-serif;
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+  nav {
+    @include flex-center;
+    flex-wrap: wrap;
+
+    a {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+
+      button {
+        font-family: 'BMDOHYEON', sans-serif;
+        font-size: 1.2rem;
+        height: 3.6rem;
+        width: 8rem;
+        padding: 1rem 1.6rem;
+        box-shadow: $shadow;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        cursor: pointer;
+        color: $title-active;
+        &:hover {
+          background-color: $primary3;
+        }
+        @media (max-width: $phone-max-width) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
