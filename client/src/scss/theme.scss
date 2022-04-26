@@ -21,6 +21,7 @@ $config: (
     primary2: #17a5a3,
     primary3: #2ac1bc,
     background: #f5f5f5,
+    line: #bbbbbb,
   ),
   dark: (
     title-active: #ffffff,
@@ -28,6 +29,7 @@ $config: (
     primary2: #eebefa,
     primary3: #e599f7,
     background: #1e2222,
+    line: #bbbbbb,
   ),
 );
 
@@ -45,6 +47,7 @@ $config: (
   --primary2-color: #{setStyle($config, $key, primary2)};
   --primary3-color: #{setStyle($config, $key, primary3)};
   --background-color: #{setStyle($config, $key, background)};
+  --line-color: #{setStyle($config, $key, line)};
 }
 
 @each $theme in dark, light {
