@@ -1,11 +1,12 @@
 @import '../theme.scss';
 
-.login-wrapper {
+.signup-wrapper {
   @include flex-center;
-  flex-direction: column;
   font-family: 'BMDOHYEON', sans-serif;
   font-size: 2rem;
   position: absolute;
+  top: 20%;
+  flex-direction: column;
   padding: 2rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -13,7 +14,6 @@
   margin: 0 auto;
   box-shadow: $shadow;
   border-radius: 1rem;
-  top: 20%;
 
   h2 {
     margin-bottom: 3rem;
@@ -54,10 +54,9 @@
     background-color: $primary3;
     border: 3px solid transparent;
     border-radius: 2rem;
-    margin-bottom: 1rem;
   }
-  a {
-    color: $primary1;
-    cursor: pointer;
-  }
+
+  // .auth-submit-button:disabled {
+  //   background-color: ;
+  // }
 }
