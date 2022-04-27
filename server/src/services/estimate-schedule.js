@@ -3,12 +3,11 @@ const { addHours } = require('date-fns');
 const isEqual = (a, b) => a.getTime() === b.getTime();
 
 const isOverlapped = (schedules, range) => {
-  let result = true;
   for (let i = 0; i < schedules.length; i += 1) {
-    if (schedules[i].from < range.to && range.to <= schedules[i].to) result = false;
+    if (schedules[i].from < range.to && range.to <= schedules[i].to) return true;
   }
 
-  return !result;
+  return false;
 };
 
 class EstimateScheduleService {
