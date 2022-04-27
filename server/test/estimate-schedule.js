@@ -1,4 +1,4 @@
-import EstimateScheduleService from '../src/services/estimate-schedule';
+const EstimateScheduleService = require('../src/services/estimate-schedule');
 
 const estimateScheduleService = new EstimateScheduleService();
 const r = estimateScheduleService.estimate([

@@ -1,4 +1,4 @@
-import { addHours } from 'date-fns';
+const { addHours } = require('date-fns');
 
 const isEqual = (a, b) => a.getTime() === b.getTime();
 
@@ -32,4 +32,4 @@ class EstimateScheduleService {
   }
 }
 
-export default EstimateScheduleService;
+module.exports = EstimateScheduleService;
